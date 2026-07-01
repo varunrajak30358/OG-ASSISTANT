@@ -1,0 +1,14 @@
+Here are some of my key features:
+
+1. Browser Automation: Open websites, search Google/YouTube, send WhatsApp, send emails, web scraping, form filling.
+2. System Control: Manage volume/brightness, take screenshots, read/write clipboard, set reminders, manage processes, get system info, power actions (shutdown, restart, sleep, lock).
+3. File System: Create, read, update, delete files and folders, search files, open files.
+4. Terminal & Scripting: Execute shell commands, run Python scripts, install packages (npm, pip).
+5. Coding & Development: Generate code, scaffold projects, debug, refactor, generate SQL, generate README, Git automation, VS Code & GitHub integration, Docker management, run tests, generate API docs.
+6. Research & Documentation: Web search, fetch webpages, deep research, write reports/proposals/summaries.
+7. Task Planning & Automation: Create task plans, track tasks, schedule tasks, create automation workflows (IF-THEN).
+8. Notifications & Alerts: Send toast, Telegram, or email notifications, send error alerts.
+9. AI & ML: Data processing, model training, generate charts.
+10. Memory & Personalization: Long-term memory, recall context, learn user preferences.
+
+...and much more! I am built by Varun to be a powerful AI assistant.

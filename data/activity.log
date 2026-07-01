@@ -1,0 +1,64 @@
+{"ts":"2026-06-23T16:26:24.462Z","action":"LEARN_PREFERENCE","user":"varun","key":"greeting_style","value":"direct_exact_repetition"}
+{"ts":"2026-06-23T16:30:17.845Z","action":"open_folder","user":"varun","target":"."}
+{"ts":"2026-06-23T16:32:24.232Z","action":"open_folder","user":"varun","target":"."}
+{"ts":"2026-06-23T16:34:08.786Z","action":"WEB_SEARCH","user":"varun","query":"text summarization techniques research papers"}
+{"ts":"2026-06-23T16:34:37.980Z","action":"WEB_SEARCH","user":"varun","query":"text summarization techniques research papers 2026"}
+{"ts":"2026-06-23T16:35:30.149Z","action":"BROWSER_AUTOMATE","user":"varun","taskType":"custom_script","url":"https://www.google.com"}
+{"ts":"2026-06-23T16:35:45.521Z","action":"BROWSER_AUTOMATE","user":"varun","taskType":"custom_script","url":"https://www.google.com"}
+{"ts":"2026-06-23T16:37:33.122Z","action":"WEB_SEARCH","user":"varun","query":"research paper text summarization job posting data"}
+{"ts":"2026-06-23T16:44:30.855Z","action":"EXECUTE_COMMAND","user":"varun","command":"chcflt E: /r /f","workDir":"C:\\Users\\varun"}
+{"ts":"2026-06-23T16:44:49.112Z","action":"EXECUTE_COMMAND","user":"varun","command":"chkdsk E: /r /f","workDir":"C:\\Users\\varun"}
+{"ts":"2026-06-23T16:45:09.982Z","action":"REMEMBER","user":"varun","id":"1782233109980-eigde8","type":"workflow"}
+{"ts":"2026-06-23T16:45:41.276Z","action":"REMEMBER","user":"varun","id":"1782233141274-8uvnqk","type":"preference"}
+{"ts":"2026-06-23T16:58:01.392Z","action":"REMEMBER","user":"varun","id":"1782233881391-t3zoxz","type":"preference"}
+{"ts":"2026-06-23T17:01:24.916Z","action":"WEB_SEARCH","user":"varun","query":"research papers 2025 NLP"}
+{"ts":"2026-06-23T17:01:46.698Z","action":"WEB_SEARCH","user":"varun","query":"research papers 2025 \"job posting\" \"text summarization\""}
+{"ts":"2026-06-23T17:02:27.063Z","action":"RESEARCH_TOPIC","user":"varun","topic":"text summarization for job postings 2025","type":"academic"}
+{"ts":"2026-06-23T17:03:08.579Z","action":"RESEARCH_TOPIC","user":"varun","topic":"job recommendation using text summarization with LLMs 2024 2025","type":"academic"}
+{"ts":"2026-06-23T17:04:48.415Z","action":"WEB_SEARCH","user":"varun","query":"LinkedIn Job Postings dataset"}
+{"ts":"2026-06-23T17:06:18.918Z","action":"REMEMBER","user":"varun","id":"1782234378917-79e72p","type":"knowledge"}
+{"ts":"2026-06-23T17:07:29.901Z","action":"GENERATE_CODE","user":"varun","language":"python","file":"summarize_job.py"}
+{"ts":"2026-06-23T17:08:19.858Z","action":"CREATE_TASK_PLAN","user":"varun","id":"1782234499856-bdsi61","goal":"Roguel score 51 cross karke paper ka proposed code reproduce karna","steps":3}
+{"ts":"2026-06-23T17:08:19.864Z","action":"REMEMBER","user":"varun","id":"1782234499863-s5b246","type":"project"}
+{"ts":"2026-06-23T17:08:38.462Z","action":"REMEMBER","user":"varun","id":"1782234518459-c1sx9h","type":"preference"}
+{"ts":"2026-06-23T17:09:54.487Z","action":"REMEMBER","user":"varun","id":"1782234594486-jktkob","type":"preference"}
+{"ts":"2026-06-23T17:10:06.247Z","action":"open_terminal","user":"varun"}
+{"ts":"2026-06-23T17:13:26.264Z","action":"REMEMBER","user":"varun","id":"1782234806262-geu1xi","type":"note"}
+{"ts":"2026-06-23T17:14:18.196Z","action":"SEND_NOTIFICATION","user":"varun","channel":"toast","title":"System UI Failure","urgency":"critical"}
+{"ts":"2026-06-23T17:14:35.130Z","action":"EXECUTE_COMMAND","user":"varun","command":"taskkill /F /IM explorer.exe && start explorer.exe","workDir":"C:\\Users\\varun"}
+{"ts":"2026-06-23T17:14:38.266Z","action":"EXECUTE_COMMAND","user":"varun","command":"taskkill /F /IM explorer.exe; start explorer.exe","workDir":"C:\\Users\\varun"}
+{"ts":"2026-06-23T17:15:12.836Z","action":"EXECUTE_COMMAND","user":"varun","command":"start explorer.exe","workDir":"C:\\Users\\varun"}
+{"ts":"2026-06-24T03:51:59.412Z","action":"WEB_SEARCH","user":"HP","query":"tax summarization research papers 2025"}
+{"ts":"2026-06-24T03:52:36.732Z","action":"WEB_SEARCH","user":"HP","query":"tax summarization research papers 2025 ScienceDirect MDPI"}
+{"ts":"2026-06-24T03:53:26.193Z","action":"WEB_SEARCH","user":"HP","query":"latest research papers 2025 AI in tax collection efficiency ScienceDirect MDPI"}
+{"ts":"2026-06-24T03:54:51.107Z","action":"EXECUTE_COMMAND","user":"HP","command":"powershell -Command \"Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.SendKeys]::SendWait('%{F4}')\"","workDir":"C:\\Users\\HP"}
+{"ts":"2026-06-24T03:57:07.644Z","action":"REMEMBER","user":"HP","id":"1782273427643-07mo01","type":"conversation"}
+{"ts":"2026-06-24T04:22:15.095Z","action":"CREATE_TASK_PLAN","user":"HP","id":"1782274935094-2nhjkt","goal":"Methodology aur Evaluation sections ko IEEE standards ke mutabik improve karna (paper id: vnsf_sdn_01).","steps":8}
+{"ts":"2026-06-24T04:22:36.643Z","action":"EXECUTE_COMMAND","user":"HP","command":"dir \"C:\\Users\\varun\\OneDrive\\Music\\Desktop\" /b /s | findstr /i \"paper document manuscript\"","workDir":"C:\\Users\\HP"}
+{"ts":"2026-06-24T04:22:58.002Z","action":"SEND_NOTIFICATION","user":"HP","channel":"toast","title":"Paper Methodology & Evaluation Needs Urgent Fix!","urgency":"high"}
+{"ts":"2026-06-24T04:23:46.340Z","action":"GENERATE_CODE","user":"HP","language":"markdown","file":"Paper_Improvement_Plan.md"}
+{"ts":"2026-06-24T09:06:25.332Z","action":"REMEMBER","user":"HP","id":"1782291985330-yuccoi","type":"preference"}
+{"ts":"2026-06-24T09:07:10.286Z","action":"WEB_SEARCH","user":"HP","query":"customer churn paper science direct"}
+{"ts":"2026-06-24T09:10:23.444Z","action":"REMEMBER","user":"HP","id":"1782292223441-b6m1pa","type":"note"}
+{"ts":"2026-06-24T09:11:05.176Z","action":"REMEMBER","user":"HP","id":"1782292265175-11ho5f","type":"fact"}
+{"ts":"2026-06-24T09:12:56.868Z","action":"REMEMBER","user":"HP","id":"1782292376867-8ag9ce","type":"preference"}
+{"ts":"2026-06-24T09:13:16.421Z","action":"RESEARCH_TOPIC","user":"HP","topic":"implementing AI agents for system automation and self-healing","type":"technical"}
+{"ts":"2026-06-26T04:06:43.411Z","action":"WEB_SEARCH","user":"HP","query":"weather in Gwalior today"}
+{"ts":"2026-06-26T04:42:56.451Z","action":"WEB_SEARCH","user":"HP","query":"current location weather and rain status"}
+{"ts":"2026-06-26T04:43:02.948Z","action":"WEB_SEARCH","user":"HP","query":"weather forecast for major cities and regions world"}
+{"ts":"2026-06-26T04:45:30.570Z","action":"GENERATE_CODE","user":"HP","language":"python","file":"E:\\update code\\nepali_sentiment_analysis_fixed_v2.py"}
+{"ts":"2026-06-29T11:21:13.252Z","action":"WEB_SEARCH","user":"HP","query":"movie about birds finding dinosaur egg"}
+{"ts":"2026-07-01T03:21:12.040Z","action":"WEB_SEARCH","user":"HP","query":"about Iris"}
+{"ts":"2026-07-01T03:21:29.075Z","action":"WEB_SEARCH","user":"HP","query":"Iris AI agent Harsh developer"}
+{"ts":"2026-07-01T03:21:53.041Z","action":"WEB_SEARCH","user":"HP","query":"user Harsh developer Iris AI agent Vercel"}
+{"ts":"2026-07-01T03:22:10.191Z","action":"list_repos","user":"HP"}
+{"ts":"2026-07-01T03:22:42.858Z","action":"query","user":"HP"}
+{"ts":"2026-07-01T03:22:45.506Z","action":"WEB_SEARCH","user":"HP","query":"\"Harsh\" developer on IRISX-AI/IRIS-AI Github"}
+{"ts":"2026-07-01T03:23:06.265Z","action":"FETCH_WEBPAGE","user":"HP","url":"https://github.com/IRISX-AI/IRIS-AI"}
+{"ts":"2026-07-01T03:25:52.108Z","action":"EXECUTE_COMMAND","user":"HP","command":"winget search \"Oracle Database\"","workDir":"C:\\Users\\HP"}
+{"ts":"2026-07-01T03:30:10.081Z","action":"ANALYZE_REQUIREMENTS","user":"HP","project":"Quantum Quantum-Safe Authentication Framework"}
+{"ts":"2026-07-01T03:32:17.971Z","action":"LEARN_PREFERENCE","user":"HP","key":"language_preference","value":"Punjabi"}
+{"ts":"2026-07-01T03:32:32.388Z","action":"LEARN_PREFERENCE","user":"HP","key":"start_language","value":"Punjabi"}
+{"ts":"2026-07-01T03:32:51.826Z","action":"WEB_SEARCH","user":"HP","query":"today's news in Punjabi"}
+{"ts":"2026-07-01T03:33:08.912Z","action":"WEB_SEARCH","user":"HP","query":"latest Bollywood gossip in Punjabi news"}
+{"ts":"2026-07-01T03:34:03.788Z","action":"LEARN_PREFERENCE","user":"HP","key":"auto_store_on_talk","value":"enabled"}

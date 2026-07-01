@@ -1,0 +1,210 @@
+[
+  {
+    "id": "1782144780948-cmp73b",
+    "goal": "Generate a detailed research paper summary on churn prediction in Notepad.",
+    "steps": [
+      {
+        "id": "1782144780948-z8lgub",
+        "description": "Research standard outline for a churn prediction research paper.",
+        "status": "pending",
+        "order": 1
+      },
+      {
+        "id": "1782144780948-9p9047",
+        "description": "Generate summary content for Introduction, Literature Review, Methodology, Model Definition, and Conclusion sections using fallback logic.",
+        "status": "pending",
+        "order": 2
+      },
+      {
+        "id": "1782144780948-h1g7gb",
+        "description": "Open Notepad.",
+        "status": "pending",
+        "order": 3
+      },
+      {
+        "id": "1782144780948-uzs0jh",
+        "description": "Combine the generated content into a formatted text report.",
+        "status": "pending",
+        "order": 4
+      },
+      {
+        "id": "1782144780948-qio8w6",
+        "description": "Write the complete research paper summary into Notepad.",
+        "status": "pending",
+        "order": 5
+      }
+    ],
+    "status": "pending",
+    "priority": "medium",
+    "createdAt": "2026-06-22T16:13:00.948Z",
+    "updatedAt": "2026-06-22T16:13:00.948Z",
+    "retries": 0,
+    "maxRetries": 2,
+    "tags": []
+  },
+  {
+    "id": "1782146846613-cs2py5",
+    "goal": "Show all previously generated text emotions one by one",
+    "steps": [
+      {
+        "id": "1782146846613-itpvlo",
+        "description": "Show Sad emotion",
+        "tool": "run_python",
+        "args": {
+          "code": "print('Sad emotion:\\n\\n😟\\n(Imagine a sad face)')"
+        },
+        "status": "pending",
+        "order": 1
+      },
+      {
+        "id": "1782146846613-yptawb",
+        "description": "Show Shared (Heart) emotion",
+        "tool": "run_python",
+        "args": {
+          "code": "print('Shared (Heart) emotion:\\n\\n   ***     ***   \\n  *   *   *   *  \\n *     * *     * \\n *      *      * \\n  *           *  \\n   *         *   \\n    *       *    \\n     *     *     \\n      *   *      \\n       * *       \\n        *')"
+        },
+        "status": "pending",
+        "order": 2
+      },
+      {
+        "id": "1782146846613-prm69x",
+        "description": "Show Confused emotion",
+        "tool": "run_python",
+        "args": {
+          "code": "print('Confused emotion:\\n\\n      ?????      \\n    ??     ??    \\n   ??   ?   ??   \\n   ?   ???   ?   \\n      ????       \\n     ????        \\n     ???         \\n                 \\n      ???        \\n      ???')"
+        },
+        "status": "pending",
+        "order": 3
+      },
+      {
+        "id": "1782146846613-up6ztc",
+        "description": "Show Happy emotion",
+        "tool": "run_python",
+        "args": {
+          "code": "print('Happy emotion:\\n\\n      *******      \\n    *         *    \\n   *   @   @   *   \\n   *           *   \\n   *   \\\\___/   *   \\n    *         *    \\n      *******')"
+        },
+        "status": "pending",
+        "order": 4
+      }
+    ],
+    "status": "completed",
+    "priority": "medium",
+    "createdAt": "2026-06-22T16:47:26.613Z",
+    "updatedAt": "2026-06-22T16:48:14.471Z",
+    "retries": 0,
+    "maxRetries": 2,
+    "tags": []
+  },
+  {
+    "id": "1782234499856-bdsi61",
+    "goal": "Roguel score 51 cross karke paper ka proposed code reproduce karna",
+    "steps": [
+      {
+        "id": "1782234499856-gezikg",
+        "description": "Last paper context aur dataset details recall karo",
+        "tool": "recall",
+        "args": {
+          "query": "last paper enhance recommendation text summarization dataset"
+        },
+        "status": "pending",
+        "order": 1
+      },
+      {
+        "id": "1782234499856-ppib14",
+        "description": "Same dataset pe based doosra related paper search karo",
+        "tool": "search_google",
+        "args": {
+          "query": "similar paper text summarization enhanced recommendation dataset rogue score"
+        },
+        "status": "pending",
+        "order": 2
+      },
+      {
+        "id": "1782234499856-7qawe6",
+        "description": "Rogue-L 51 cross karne ke liye code analyze aur generate karo",
+        "tool": "generate_code",
+        "args": {
+          "description": "Reproduce research paper code for summarization focusing on exceeding Rogue-L 51",
+          "language": "python"
+        },
+        "status": "pending",
+        "order": 3
+      }
+    ],
+    "status": "pending",
+    "priority": "medium",
+    "createdAt": "2026-06-23T17:08:19.856Z",
+    "updatedAt": "2026-06-23T17:08:19.856Z",
+    "retries": 0,
+    "maxRetries": 2,
+    "tags": [],
+    "deadline": "None"
+  },
+  {
+    "id": "1782274935094-2nhjkt",
+    "goal": "Methodology aur Evaluation sections ko IEEE standards ke mutabik improve karna (paper id: vnsf_sdn_01).",
+    "steps": [
+      {
+        "id": "1782274935094-k6cn1k",
+        "description": "Problem Formulation define karo math model ke saath: Objective (Energy, Delay Minimize) aur Constraints (CPU, BW, Security).",
+        "status": "pending",
+        "order": 1
+      },
+      {
+        "id": "1782274935094-ttaykp",
+        "description": "Network Model (Graph G=(N,L)) aur Energy Model (Pserver) equations add karo.",
+        "status": "pending",
+        "order": 2
+      },
+      {
+        "id": "1782274935094-8cv929",
+        "description": "Proposed Algorithm ka Algorithm Pseudocode aur Time Complexity Analysis (Big O) likho.",
+        "status": "pending",
+        "order": 3
+      },
+      {
+        "id": "1782274935094-wyz88s",
+        "description": "Evaluation mein missing metrics (Throughput, Controller Response Time, CPU/Memory, Security Metrics) add karo.",
+        "status": "pending",
+        "order": 4
+      },
+      {
+        "id": "1782274935094-n25zkf",
+        "description": "Scalability Analysis, Sensitivity Analysis, and an Ablation Study perform karke results generate karo.",
+        "status": "pending",
+        "order": 5
+      },
+      {
+        "id": "1782274935094-nkz7d0",
+        "description": "Statistical Significance Testing (e.g., p-value) apply karo results pe.",
+        "status": "pending",
+        "order": 6
+      },
+      {
+        "id": "1782274935094-s0j6jx",
+        "description": "Additional baseline comparisons (e.g., Greedy, RL-Based) aur standard comparison table create karo.",
+        "status": "pending",
+        "order": 7
+      },
+      {
+        "id": "1782274935094-ua4xtt",
+        "description": "Sabhi updates ko existing LaTeX/Word document mein integrate karo.",
+        "status": "pending",
+        "order": 8
+      }
+    ],
+    "status": "pending",
+    "priority": "critical",
+    "createdAt": "2026-06-24T04:22:15.094Z",
+    "updatedAt": "2026-06-24T04:22:15.094Z",
+    "retries": 0,
+    "maxRetries": 2,
+    "tags": [
+      "research-paper",
+      "writing",
+      "sdn",
+      "vnsf"
+    ],
+    "deadline": "next week"
+  }
+]

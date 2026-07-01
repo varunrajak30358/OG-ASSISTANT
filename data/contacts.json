@@ -1,0 +1,9 @@
+{
+  "contacts": [
+    { "name": "varun",     "phone": "+919300563281", "email": "varun@example.com" },
+    { "name": "me",        "phone": "+919300563281", "email": "varun@example.com" },
+    { "name": "pranjal",   "phone": "+918057133717", "email": "" },
+    { "name": "pooja di",  "phone": "+918602408303", "email": "" },
+    { "name": "pooja",     "phone": "+918602408303", "email": "" }
+  ]
+}

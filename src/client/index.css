@@ -1,0 +1,593 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #000000;
+  --color-primary: #00d4ff;
+  --color-system: #008899;
+}
+
+/* ── Google Fonts ─────────────────────────────────────────────────────── */
+
+/* ── Root Variables ───────────────────────────────────────────────────── */
+:root {
+  --jarvis-cyan: #00d4ff;
+  --jarvis-cyan-dim: rgba(0, 212, 255, 0.4);
+  --jarvis-gold: #ffa500;
+  --jarvis-gold-dim: rgba(255, 165, 0, 0.3);
+  --jarvis-blue: #0088cc;
+  --jarvis-red: #ff3333;
+  --jarvis-bg: #020810;
+  --jarvis-panel: rgba(0, 20, 40, 0.85);
+  --jarvis-border: rgba(0, 212, 255, 0.2);
+  --jarvis-glow: 0 0 15px rgba(0, 212, 255, 0.3);
+  --jarvis-text: rgba(0, 220, 255, 0.9);
+  --jarvis-text-dim: rgba(0, 200, 255, 0.5);
+  --hud-font: 'Orbitron', 'Share Tech Mono', monospace;
+  --data-font: 'Share Tech Mono', 'Courier New', monospace;
+  --body-font: 'Rajdhani', 'Inter', system-ui, sans-serif;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+html, body, #root {
+  margin: 0; padding: 0;
+  width: 100%; height: 100%;
+  background: var(--jarvis-bg);
+  font-family: var(--body-font);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 212, 255, 0.4); }
+* { scrollbar-width: thin; scrollbar-color: rgba(0,212,255,0.2) transparent; }
+
+/* ── JARVIS Scan Lines Overlay ────────────────────────────────────────── */
+.jarvis-scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 212, 255, 0.015) 2px,
+    rgba(0, 212, 255, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 999;
+  animation: scanlineScroll 8s linear infinite;
+}
+
+/* ── Hex Grid Pattern ─────────────────────────────────────────────────── */
+.jarvis-hex-bg {
+  position: relative;
+}
+.jarvis-hex-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image:
+    linear-gradient(30deg, var(--jarvis-cyan) 12%, transparent 12.5%, transparent 87%, var(--jarvis-cyan) 87.5%, var(--jarvis-cyan)),
+    linear-gradient(150deg, var(--jarvis-cyan) 12%, transparent 12.5%, transparent 87%, var(--jarvis-cyan) 87.5%, var(--jarvis-cyan)),
+    linear-gradient(30deg, var(--jarvis-cyan) 12%, transparent 12.5%, transparent 87%, var(--jarvis-cyan) 87.5%, var(--jarvis-cyan)),
+    linear-gradient(150deg, var(--jarvis-cyan) 12%, transparent 12.5%, transparent 87%, var(--jarvis-cyan) 87.5%, var(--jarvis-cyan)),
+    linear-gradient(60deg, rgba(0,212,255,0.5) 25%, transparent 25.5%, transparent 75%, rgba(0,212,255,0.5) 75%, rgba(0,212,255,0.5)),
+    linear-gradient(60deg, rgba(0,212,255,0.5) 25%, transparent 25.5%, transparent 75%, rgba(0,212,255,0.5) 75%, rgba(0,212,255,0.5));
+  background-size: 40px 70px;
+  background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HUD Panel Styling ────────────────────────────────────────────────── */
+.hud-panel {
+  background: var(--jarvis-panel);
+  border: 1px solid var(--jarvis-border);
+  backdrop-filter: blur(20px);
+  position: relative;
+}
+.hud-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--jarvis-cyan), transparent);
+  opacity: 0.6;
+}
+
+/* ── HUD Corner Brackets ─────────────────────────────────────────────── */
+.hud-corners {
+  position: relative;
+}
+.hud-corners::before,
+.hud-corners::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--jarvis-cyan);
+  border-style: solid;
+  opacity: 0.6;
+}
+.hud-corners::before {
+  top: -1px; left: -1px;
+  border-width: 1px 0 0 1px;
+}
+.hud-corners::after {
+  bottom: -1px; right: -1px;
+  border-width: 0 1px 1px 0;
+}
+
+/* ── Arc Reactor Button ───────────────────────────────────────────────── */
+.arc-reactor {
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.arc-reactor::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  animation: reactorSpin 4s linear infinite;
+  border-top-color: var(--jarvis-cyan);
+}
+.arc-reactor::after {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  animation: reactorSpin 6s linear infinite reverse;
+  border-bottom-color: rgba(0, 212, 255, 0.5);
+  border-left-color: rgba(0, 212, 255, 0.5);
+}
+.arc-reactor:hover {
+  box-shadow:
+    0 0 30px rgba(0, 212, 255, 0.6),
+    0 0 60px rgba(0, 212, 255, 0.3),
+    inset 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+/* ── Holographic Text ─────────────────────────────────────────────────── */
+.holo-text {
+  color: var(--jarvis-cyan);
+  text-shadow:
+    0 0 10px rgba(0, 212, 255, 0.8),
+    0 0 30px rgba(0, 212, 255, 0.4),
+    0 0 60px rgba(0, 212, 255, 0.2);
+}
+.holo-text-gold {
+  color: var(--jarvis-gold);
+  text-shadow:
+    0 0 10px rgba(255, 165, 0, 0.8),
+    0 0 30px rgba(255, 165, 0, 0.4);
+}
+
+/* ── Segmented Progress Bar ───────────────────────────────────────────── */
+.jarvis-bar {
+  display: flex;
+  gap: 2px;
+  height: 6px;
+}
+.jarvis-bar-segment {
+  flex: 1;
+  border-radius: 1px;
+  background: rgba(0, 212, 255, 0.1);
+  transition: background 0.3s ease;
+}
+.jarvis-bar-segment.active {
+  background: linear-gradient(180deg, var(--jarvis-cyan), var(--jarvis-blue));
+  box-shadow: 0 0 4px rgba(0, 212, 255, 0.5);
+}
+
+/* ── Glowing Border Animation ─────────────────────────────────────────── */
+.glow-border {
+  position: relative;
+  overflow: hidden;
+}
+.glow-border::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--jarvis-cyan), transparent);
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* ── Data Stream Effect ───────────────────────────────────────────────── */
+.data-stream {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 212, 255, 0.03) 50%,
+    transparent 100%
+  );
+  animation: dataFlow 2s ease-in-out infinite;
+}
+
+/* ── Holographic Flicker ──────────────────────────────────────────────── */
+.holo-flicker {
+  animation: holoFlicker 4s ease-in-out infinite;
+}
+
+/* ── Mic Status Indicator ─────────────────────────────────────────────── */
+.mic-active {
+  animation: micPulse 1.5s ease-in-out infinite;
+}
+.mic-warning {
+  animation: micWarning 0.8s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   KEYFRAMES
+   ══════════════════════════════════════════════════════════════════════ */
+
+@keyframes scanlineScroll {
+  from { background-position: 0 0; }
+  to { background-position: 0 100vh; }
+}
+
+@keyframes reactorSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes borderGlow {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+@keyframes dataFlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes holoFlicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.8; }
+  94% { opacity: 1; }
+  96% { opacity: 0.9; }
+  97% { opacity: 1; }
+}
+
+@keyframes micPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(0, 212, 255, 0); }
+}
+
+@keyframes micWarning {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(255, 165, 0, 0); }
+}
+
+/* Existing keyframes kept for compatibility */
+@keyframes wave          { 0%{transform:scaleY(0.3)} 100%{transform:scaleY(1.0)} }
+@keyframes chatwave      { 0%{transform:scaleY(0.4)} 100%{transform:scaleY(1.0)} }
+@keyframes statusPulse   { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.7)} }
+@keyframes radarSweep    { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes blipPulse     { 0%,100%{opacity:0.2;transform:scale(0.8)} 50%{opacity:1;transform:scale(1.4)} }
+@keyframes sigBar        { 0%,100%{opacity:0.4;transform:scaleY(0.6)} 50%{opacity:1;transform:scaleY(1)} }
+@keyframes tickerScroll  { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+@keyframes reactorPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(0, 212, 255, 0.5),
+      0 0 40px rgba(0, 212, 255, 0.3),
+      inset 0 0 15px rgba(0, 212, 255, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 35px rgba(0, 212, 255, 0.7),
+      0 0 70px rgba(0, 212, 255, 0.4),
+      inset 0 0 25px rgba(0, 212, 255, 0.4);
+  }
+}
+
+@keyframes hudCornerExpand {
+  from { width: 0; height: 0; }
+  to { width: 12px; height: 12px; }
+}
+
+@keyframes dataScroll {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
+@keyframes glitchFlicker {
+  0%, 100% { clip-path: inset(0 0 0 0); }
+  5% { clip-path: inset(10% 0 85% 0); }
+  10% { clip-path: inset(0 0 0 0); }
+  15% { clip-path: inset(80% 0 5% 0); }
+  20% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes sweepLine {
+  0% { top: -2px; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes emoTalk {
+  0% { height: 6px; }
+  50% { height: 16px; }
+  100% { height: 6px; }
+}
+
+/* ── Light Mode Custom Styles ───────────────────────────────────────── */
+.theme-light {
+  --jarvis-cyan: #0e7490; /* cyan-700 (darker, high-contrast cyan) */
+  --jarvis-cyan-dim: rgba(14, 116, 144, 0.15);
+  --jarvis-gold: #b45309; /* amber-700 */
+  --jarvis-gold-dim: rgba(180, 83, 9, 0.15);
+  --jarvis-blue: #0369a1; /* sky-700 */
+  --jarvis-red: #b91c1c; /* red-700 */
+  --jarvis-bg: #f1f5f9; /* slate-100 */
+  --jarvis-panel: #ffffff;
+  --jarvis-border: rgba(15, 23, 42, 0.08);
+  --jarvis-glow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --jarvis-text: #0f172a; /* slate-900 */
+  --jarvis-text-dim: #475569; /* slate-600 */
+
+  background-color: var(--jarvis-bg) !important;
+  color: var(--jarvis-text) !important;
+}
+
+/* Force override text white to slate-800 */
+.theme-light .text-white {
+  color: #1e293b !important;
+}
+.theme-light .text-white\/90 {
+  color: #0f172a !important;
+}
+.theme-light .text-white\/80 {
+  color: #334155 !important;
+}
+.theme-light .text-white\/70 {
+  color: #475569 !important;
+}
+.theme-light .text-white\/40 {
+  color: #64748b !important;
+}
+.theme-light .text-white\/30 {
+  color: #94a3b8 !important;
+}
+.theme-light .text-white\/20 {
+  color: #64748b !important; /* Made darker for much better contrast */
+}
+
+/* Overriding cyan text colors for high readability */
+.theme-light .text-cyan-200\/70 {
+  color: rgba(14, 116, 144, 0.7) !important;
+}
+.theme-light .text-cyan-200\/80 {
+  color: rgba(14, 116, 144, 0.8) !important;
+}
+.theme-light .text-cyan-300 {
+  color: #0e7490 !important; /* cyan-700 */
+}
+.theme-light .text-cyan-300\/60 {
+  color: rgba(14, 116, 144, 0.6) !important;
+}
+.theme-light .text-cyan-300\/80 {
+  color: rgba(14, 116, 144, 0.8) !important;
+}
+.theme-light .text-cyan-400 {
+  color: #0c4a6e !important; /* sky-900 (deep blue-teal) */
+}
+.theme-light .text-cyan-400\/40 {
+  color: rgba(12, 74, 110, 0.4) !important;
+}
+.theme-light .text-cyan-400\/60 {
+  color: rgba(12, 74, 110, 0.6) !important;
+}
+.theme-light .text-cyan-400\/70 {
+  color: rgba(12, 74, 110, 0.7) !important;
+}
+.theme-light .text-cyan-400\/80 {
+  color: rgba(12, 74, 110, 0.8) !important;
+}
+.theme-light .text-cyan-500 {
+  color: #0369a1 !important; /* sky-700 */
+}
+
+/* Other text accents */
+.theme-light .text-emerald-400 {
+  color: #047857 !important; /* emerald-700 */
+}
+.theme-light .text-emerald-400\/80 {
+  color: rgba(4, 120, 87, 0.8) !important;
+}
+.theme-light .text-red-400 {
+  color: #b91c1c !important; /* red-700 */
+}
+.theme-light .text-amber-400 {
+  color: #b45309 !important; /* amber-700 */
+}
+.theme-light .text-purple-400 {
+  color: #7e22ce !important; /* purple-700 */
+}
+.theme-light .text-purple-400\/80 {
+  color: rgba(126, 34, 206, 0.8) !important;
+}
+.theme-light .text-purple-300\/80 {
+  color: rgba(147, 51, 234, 0.8) !important;
+}
+
+/* Background panel colors */
+.theme-light .bg-black {
+  background-color: #ffffff !important;
+  box-shadow: var(--jarvis-glow) !important;
+}
+.theme-light .bg-black\/70 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: var(--jarvis-glow) !important;
+}
+.theme-light .bg-black\/60 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: var(--jarvis-glow) !important;
+}
+.theme-light .bg-black\/40 {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  box-shadow: var(--jarvis-glow) !important;
+}
+.theme-light .bg-black\/20 {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.theme-light .bg-black\/15 {
+  background-color: rgba(15, 23, 42, 0.03) !important;
+}
+.theme-light .bg-black\/10 {
+  background-color: rgba(15, 23, 42, 0.02) !important;
+}
+
+/* Accent backgrounds */
+.theme-light .bg-cyan-950\/40 {
+  background-color: rgba(14, 116, 144, 0.12) !important;
+}
+.theme-light .bg-cyan-950\/20 {
+  background-color: rgba(14, 116, 144, 0.08) !important;
+}
+.theme-light .bg-cyan-950\/10 {
+  background-color: rgba(14, 116, 144, 0.05) !important;
+}
+.theme-light .bg-cyan-950\/5 {
+  background-color: rgba(14, 116, 144, 0.02) !important;
+}
+
+.theme-light .bg-emerald-500\/10 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+}
+.theme-light .bg-red-500 {
+  background-color: #ef4444 !important;
+}
+.theme-light .bg-red-950\/20 {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+.theme-light .bg-white\/20 {
+  background-color: rgba(15, 23, 42, 0.06) !important;
+}
+.theme-light .bg-white\/\[0\.02\] {
+  background-color: rgba(15, 23, 42, 0.01) !important;
+}
+
+/* Borders */
+.theme-light .border-cyan-500\/30 {
+  border-color: rgba(14, 116, 144, 0.35) !important;
+}
+.theme-light .border-cyan-500\/20 {
+  border-color: rgba(14, 116, 144, 0.25) !important;
+}
+.theme-light .border-cyan-500\/15 {
+  border-color: rgba(14, 116, 144, 0.2) !important;
+}
+.theme-light .border-cyan-500\/10 {
+  border-color: rgba(14, 116, 144, 0.12) !important;
+}
+.theme-light .border-cyan-500\/5 {
+  border-color: rgba(14, 116, 144, 0.06) !important;
+}
+
+.theme-light .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+.theme-light .border-white\/20 {
+  border-color: rgba(15, 23, 42, 0.15) !important;
+}
+
+.theme-light .border-emerald-500\/25 {
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+.theme-light .border-red-500\/20 {
+  border-color: rgba(239, 68, 68, 0.25) !important;
+}
+
+/* Hovers */
+.theme-light .hover\:bg-cyan-950\/40:hover {
+  background-color: rgba(14, 116, 144, 0.18) !important;
+}
+.theme-light .hover\:bg-cyan-950\/30:hover {
+  background-color: rgba(14, 116, 144, 0.14) !important;
+}
+.theme-light .hover\:bg-white\/5:hover {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+.theme-light .hover\:border-cyan-500\/30:hover {
+  border-color: rgba(14, 116, 144, 0.45) !important;
+}
+.theme-light .hover\:border-cyan-500\/25:hover {
+  border-color: rgba(14, 116, 144, 0.38) !important;
+}
+.theme-light .hover\:border-cyan-400\/40:hover {
+  border-color: rgba(14, 116, 144, 0.5) !important;
+}
+.theme-light .hover\:text-cyan-300:hover {
+  color: #0e7490 !important;
+}
+.theme-light .hover\:text-cyan-400:hover {
+  color: #0c4a6e !important;
+}
+
+/* Scrollbars for light mode */
+.theme-light::-webkit-scrollbar-thumb {
+  background: rgba(14, 116, 144, 0.2) !important;
+}
+.theme-light::-webkit-scrollbar-thumb:hover {
+  background: rgba(14, 116, 144, 0.45) !important;
+}
+.theme-light {
+  scrollbar-color: rgba(14,116,144,0.2) transparent !important;
+}
+
+/* Placeholders & Inputs */
+.theme-light .placeholder-white\/20::placeholder {
+  color: #94a3b8 !important;
+}
+
+.theme-light input,
+.theme-light textarea {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+  border-color: rgba(14, 116, 144, 0.2) !important;
+}
+
+/* Scanlines and Hex BG opacity reductions in light mode */
+.theme-light.jarvis-scanlines::after {
+  opacity: 0.2 !important;
+}
+.theme-light .jarvis-hex-bg::before {
+  opacity: 0.015 !important;
+}
+
+/* EmoFace Robot HUD overrides in light mode */
+.theme-light .emo-hud-ring {
+  border-color: rgba(14, 116, 144, 0.35) !important;
+  box-shadow: 0 0 10px rgba(14, 116, 144, 0.08) !important;
+}
+.theme-light .emo-hud-corner::before,
+.theme-light .emo-hud-corner::after {
+  background: rgba(14, 116, 144, 0.6) !important;
+}
+.theme-light .emo-hud-label {
+  color: rgba(14, 116, 144, 0.85) !important;
+  text-shadow: none !important;
+}
+.theme-light .emo-hud-scanline {
+  background: linear-gradient(90deg, transparent, rgba(14, 116, 144, 0.3), transparent) !important;
+}
+

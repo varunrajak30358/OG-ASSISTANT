@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1782058300009-zkzf7x",
+    "name": "Ravi Greeting Workflow",
+    "trigger": {
+      "type": "event"
+    },
+    "steps": [
+      {
+        "id": "1782058300009-alprkb",
+        "type": "action",
+        "action": "IF user_message contains 'Ravi', THEN respond with 'Hello Ravi, welcome!'"
+      }
+    ],
+    "enabled": true,
+    "createdAt": "2026-06-21T16:11:40.009Z",
+    "runCount": 0
+  }
+]

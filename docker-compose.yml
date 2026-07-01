@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  og-assistant:
+    build: .
+    container_name: og-assistant
+    ports:
+      - "6753:6753"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - OG_VOICE=${OG_VOICE:-Aoede}
+    volumes:
+      - ./data:/usr/src/app/data   # persist memory + contacts
+    restart: unless-stopped
+    stdin_open: true
+    tty: true

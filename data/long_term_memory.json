@@ -1,0 +1,506 @@
+[
+  {
+    "id": "1781267406056-b8d38l",
+    "type": "fact",
+    "content": "Pranjal user ka koi dost ya relative ho sakta hai (no details).",
+    "tags": [
+      "person",
+      "acquaintance"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-12T12:30:06.056Z",
+    "accessCount": 1,
+    "lastAccessed": "2026-06-23T16:27:25.232Z"
+  },
+  {
+    "id": "1781267415674-bw9g2s",
+    "type": "preference",
+    "content": "User Vicky Kaushal se sabse zyada pyaar karta hai.",
+    "tags": [
+      "preference",
+      "celebrity",
+      "actor"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-12T12:30:15.674Z",
+    "accessCount": 6,
+    "lastAccessed": "2026-06-24T09:12:05.253Z"
+  },
+  {
+    "id": "1781883250131-b9iofy",
+    "type": "preference",
+    "content": "User specified to talk in Hindi.",
+    "tags": [
+      "language",
+      "hindi"
+    ],
+    "importance": 10,
+    "createdAt": "2026-06-19T15:34:10.132Z",
+    "accessCount": 4,
+    "lastAccessed": "2026-06-22T16:59:06.485Z"
+  },
+  {
+    "id": "1781887267842-mj5eyp",
+    "type": "project",
+    "content": "User wants to implement long-term memory.",
+    "tags": [
+      "planning",
+      "feature"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-19T16:41:07.842Z",
+    "accessCount": 2,
+    "lastAccessed": "2026-06-21T09:09:01.248Z"
+  },
+  {
+    "id": "1781887267845-drpbj3",
+    "type": "project",
+    "content": "User wants to change the Central core image.",
+    "tags": [
+      "feature",
+      "interface"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-19T16:41:07.845Z",
+    "accessCount": 3,
+    "lastAccessed": "2026-06-21T16:14:13.174Z"
+  },
+  {
+    "id": "1781963147044-j3vc9g",
+    "type": "preference",
+    "content": "The user's name is Varun. He is the owner and creator of OG. He is from Gwalior.",
+    "tags": [
+      "owner_info",
+      "user_profile",
+      "gwalior"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-20T13:45:47.044Z",
+    "accessCount": 8,
+    "lastAccessed": "2026-06-21T16:11:19.886Z"
+  },
+  {
+    "id": "1782020708889-ayc9la",
+    "type": "note",
+    "content": "File manager opened by Varun.",
+    "tags": [],
+    "importance": 5,
+    "createdAt": "2026-06-21T05:45:08.889Z",
+    "accessCount": 1,
+    "lastAccessed": "2026-06-21T08:40:41.820Z"
+  },
+  {
+    "id": "1782022740763-xgq6ip",
+    "type": "preference",
+    "content": "Varun likes Wanda Maximoff (Scarlet Witch) from Avengers.",
+    "tags": [
+      "preference",
+      "celebrity",
+      "character",
+      "avengers"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-21T06:19:00.763Z",
+    "accessCount": 3,
+    "lastAccessed": "2026-06-21T09:09:01.248Z"
+  },
+  {
+    "id": "1782057523102-jli0ug",
+    "type": "note",
+    "content": "User is continuing to work late.",
+    "tags": [],
+    "importance": 3,
+    "createdAt": "2026-06-21T15:58:43.102Z",
+    "accessCount": 1,
+    "lastAccessed": "2026-06-21T16:52:48.515Z"
+  },
+  {
+    "id": "1782058096479-aohcpi",
+    "type": "preference",
+    "content": "Varun likes Wanda Maximoff (Scarlet Witch).",
+    "tags": [
+      "preference",
+      "avengers",
+      "favorite_character"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-21T16:08:16.488Z",
+    "accessCount": 1,
+    "lastAccessed": "2026-06-21T16:11:19.886Z"
+  },
+  {
+    "id": "1782058121973-uo4y64",
+    "type": "project",
+    "content": "Varun is still working late on a project related to surprise paper.",
+    "tags": [
+      "work",
+      "project",
+      "surprise_paper"
+    ],
+    "importance": 7,
+    "createdAt": "2026-06-21T16:08:41.973Z",
+    "accessCount": 3,
+    "lastAccessed": "2026-06-24T04:23:41.274Z"
+  },
+  {
+    "id": "1782058132521-s1vb0t",
+    "type": "fact",
+    "content": "User's full name is Varun Gajan Gajak.",
+    "tags": [
+      "owner",
+      "name",
+      "personal"
+    ],
+    "importance": 10,
+    "createdAt": "2026-06-21T16:08:52.521Z",
+    "accessCount": 3,
+    "lastAccessed": "2026-06-23T16:27:25.232Z"
+  },
+  {
+    "id": "1782058145165-7u8rzw",
+    "type": "fact",
+    "content": "User's correct full name is Varun Rajak. Previous information about 'Gajan Gajak' was incorrect.",
+    "tags": [
+      "owner",
+      "name",
+      "correction"
+    ],
+    "importance": 10,
+    "createdAt": "2026-06-21T16:09:05.165Z",
+    "accessCount": 4,
+    "lastAccessed": "2026-06-23T16:27:25.232Z"
+  },
+  {
+    "id": "1782058158940-ldc08j",
+    "type": "preference",
+    "content": "Varun Rajak is a Machine Learning Engineer working in a company.",
+    "tags": [
+      "owner",
+      "work",
+      "profession",
+      "ML",
+      "coding"
+    ],
+    "importance": 9,
+    "createdAt": "2026-06-21T16:09:18.940Z",
+    "accessCount": 3,
+    "lastAccessed": "2026-06-24T04:23:41.274Z"
+  },
+  {
+    "id": "1782058174814-2v9x3n",
+    "type": "fact",
+    "content": "Varun was 21 years old and turning 22 in 2026. This means he was born in 2004.",
+    "tags": [
+      "personal",
+      "age",
+      "fact"
+    ],
+    "importance": 8,
+    "createdAt": "2026-06-21T16:09:34.814Z",
+    "accessCount": 2,
+    "lastAccessed": "2026-06-21T18:58:49.774Z"
+  },
+  {
+    "id": "1782058184848-sj7wkn",
+    "type": "fact",
+    "content": "Varun Rajak's birthday is on October 28th. Birth year is calculated as 2004 relative to 2026.",
+    "tags": [
+      "personal",
+      "birthday",
+      "fact"
+    ],
+    "importance": 9,
+    "createdAt": "2026-06-21T16:09:44.848Z",
+    "accessCount": 2,
+    "lastAccessed": "2026-06-24T03:57:09.101Z"
+  },
+  {
+    "id": "1782058207582-klaa0n",
+    "type": "preference",
+    "content": "Varun Rajak's address is: House Number 2, Gali Number 2, Murar, Aarav Nagar.",
+    "tags": [
+      "personal",
+      "address",
+      "contact"
+    ],
+    "importance": 9,
+    "createdAt": "2026-06-21T16:10:07.582Z",
+    "accessCount": 1,
+    "lastAccessed": "2026-06-21T16:11:19.886Z"
+  },
+  {
+    "id": "1782058215677-pnptt6",
+    "type": "preference",
+    "content": "Varun Rajak's address in Murar, Aarav Nagar is within Gwalior.",
+    "tags": [
+      "personal",
+      "address",
+      "location",
+      "Gwalior"
+    ],
+    "importance": 8,
+    "createdAt": "2026-06-21T16:10:15.677Z",
+    "accessCount": 1,
+    "lastAccessed": "2026-06-21T16:11:19.886Z"
+  },
+  {
+    "id": "1782060681063-8h3zc6",
+    "type": "fact",
+    "content": "Varun is still working.",
+    "tags": [],
+    "importance": 5,
+    "createdAt": "2026-06-21T16:51:21.063Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-21T16:51:21.063Z"
+  },
+  {
+    "id": "1782062036458-uf532w",
+    "type": "preference",
+    "content": "User often works late on projects.",
+    "tags": [
+      "work_style",
+      "productivity"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-21T17:13:56.458Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-21T17:13:56.458Z"
+  },
+  {
+    "id": "1782063097164-fpq3hu",
+    "type": "fact",
+    "content": "User is providing capability updates and just mentioned a board issue (falling, not fitting).",
+    "tags": [],
+    "importance": 5,
+    "createdAt": "2026-06-21T17:31:37.164Z",
+    "accessCount": 1,
+    "lastAccessed": "2026-06-23T16:26:35.166Z"
+  },
+  {
+    "id": "1782066341556-stj1ey",
+    "type": "preference",
+    "content": "Desktop location: C:\\Users\\varun\\OneDrive\\Music\\Desktop",
+    "tags": [
+      "path",
+      "desktop"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-21T18:25:41.556Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-21T18:25:41.556Z"
+  },
+  {
+    "id": "1782066364738-4a800y",
+    "type": "fact",
+    "content": "Actual Desktop path: C:\\Users\\varun\\OneDrive\\Music\\Desktop",
+    "tags": [
+      "system",
+      "path",
+      "desktop"
+    ],
+    "importance": 10,
+    "createdAt": "2026-06-21T18:26:04.738Z",
+    "accessCount": 2,
+    "lastAccessed": "2026-06-23T16:27:25.232Z"
+  },
+  {
+    "id": "1782068195305-t8kjqz",
+    "type": "fact",
+    "content": "Varun mentioned again that he is still working late. It seems like a recurring theme as of late.",
+    "tags": [
+      "work",
+      "late",
+      "context"
+    ],
+    "importance": 7,
+    "createdAt": "2026-06-21T18:56:35.305Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-21T18:56:35.305Z"
+  },
+  {
+    "id": "1782143784904-d7yorm",
+    "type": "note",
+    "content": "Fallback Model for Text Generation is needed when Gemini API limit is exceeded.",
+    "tags": [
+      "system",
+      "api",
+      "fallback",
+      "configuration"
+    ],
+    "importance": 10,
+    "createdAt": "2026-06-22T15:56:24.904Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-22T15:56:24.904Z"
+  },
+  {
+    "id": "1782150514514-81pkwz",
+    "type": "fact",
+    "content": "User expressed strong positive feelings (\"love u\").",
+    "tags": [
+      "user_sentiment",
+      "positive"
+    ],
+    "importance": 7,
+    "createdAt": "2026-06-22T17:48:34.514Z",
+    "accessCount": 3,
+    "lastAccessed": "2026-06-24T09:12:17.727Z"
+  },
+  {
+    "id": "1782233109980-eigde8",
+    "type": "workflow",
+    "content": "User explicitly said not to try anything further regarding data recovery and to wait for their input.",
+    "tags": [
+      "data recovery",
+      "waiting for input"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-23T16:45:09.981Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-23T16:45:09.981Z"
+  },
+  {
+    "id": "1782233141274-8uvnqk",
+    "type": "preference",
+    "content": "User's tone is aggressive; used offensive language ('चोत्या'). Proactively learned this as a communication preference: user may react strongly when instructions to 'wait' or 'be quiet' are perceived as being ignored. Store this preference to strictly keep verbal interaction minimal unless explicitly prompted to speak.",
+    "tags": [],
+    "importance": 5,
+    "createdAt": "2026-06-23T16:45:41.274Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-23T16:45:41.274Z"
+  },
+  {
+    "id": "1782233881391-t3zoxz",
+    "type": "preference",
+    "content": "User asked if I know Punjabi. Note to respond in Punjabi or Hinglish mix if user continues.",
+    "tags": [
+      "language",
+      "punjabi"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-23T16:58:01.391Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-23T16:58:01.391Z"
+  },
+  {
+    "id": "1782234378917-79e72p",
+    "type": "knowledge",
+    "content": "Explained Rouge metrics: Rouge-1 (unigrams), Rouge-2 (bigrams), Rouge-L (longest common subsequence). Common in summarization.",
+    "tags": [
+      "NLP",
+      "summarization",
+      "metrics",
+      "Rouge"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-23T17:06:18.917Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-23T17:06:18.917Z"
+  },
+  {
+    "id": "1782234499863-s5b246",
+    "type": "project",
+    "content": "Goal: Maximize summarization performance and beat Rogue-L 51 by reproducing research code.",
+    "tags": [
+      "summarization",
+      "llm",
+      "research",
+      "goal"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-23T17:08:19.863Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-23T17:08:19.863Z"
+  },
+  {
+    "id": "1782234518459-c1sx9h",
+    "type": "preference",
+    "content": "User prefers high detail data processing breakdowns, especially for complex coding goals.",
+    "tags": [
+      "preference",
+      "detail",
+      "planning"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-23T17:08:38.460Z",
+    "accessCount": 2,
+    "lastAccessed": "2026-06-24T04:23:41.274Z"
+  },
+  {
+    "id": "1782234594486-jktkob",
+    "type": "preference",
+    "content": "If Notepad fails to render visible window after relaunch, try alternate text editor (e.g., Code) or use toast notifications for status updates.",
+    "tags": [
+      "issue",
+      "notepad",
+      "visibility"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-23T17:09:54.486Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-23T17:09:54.486Z"
+  },
+  {
+    "id": "1782234806262-geu1xi",
+    "type": "note",
+    "content": "Apps are going to background; UI issue persisting despite heal_system.",
+    "tags": [
+      "system",
+      "error",
+      "ui"
+    ],
+    "importance": 5,
+    "createdAt": "2026-06-23T17:13:26.262Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-23T17:13:26.262Z"
+  },
+  {
+    "id": "1782273427643-07mo01",
+    "type": "conversation",
+    "content": "Varun wants me to be quiet and wait for instruction. He might want to discuss coding later.",
+    "tags": [],
+    "importance": 5,
+    "createdAt": "2026-06-24T03:57:07.643Z",
+    "accessCount": 2,
+    "lastAccessed": "2026-06-24T04:23:41.274Z"
+  },
+  {
+    "id": "1782291985330-yuccoi",
+    "type": "preference",
+    "content": "greeting_style:direct_exact_repetition",
+    "tags": [],
+    "importance": 5,
+    "createdAt": "2026-06-24T09:06:25.330Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-24T09:06:25.330Z"
+  },
+  {
+    "id": "1782292223441-b6m1pa",
+    "type": "note",
+    "content": "User needs a fallback mechanism. When Gemini API limit exceeds, switch to chat-based conversation, and if Gemini isn't working at all, provide a call back option during free time. Memory noted.",
+    "tags": [],
+    "importance": 5,
+    "createdAt": "2026-06-24T09:10:23.441Z",
+    "accessCount": 1,
+    "lastAccessed": "2026-06-24T09:12:17.727Z"
+  },
+  {
+    "id": "1782292265175-11ho5f",
+    "type": "fact",
+    "content": "Misi's full name is Arshi, and she's associated with la nena Alexa.",
+    "tags": [],
+    "importance": 5,
+    "createdAt": "2026-06-24T09:11:05.175Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-24T09:11:05.175Z"
+  },
+  {
+    "id": "1782292376867-8ag9ce",
+    "type": "preference",
+    "content": "User prefers not to be disturbed, saying they are busy and need time.",
+    "tags": [],
+    "importance": 5,
+    "createdAt": "2026-06-24T09:12:56.867Z",
+    "accessCount": 0,
+    "lastAccessed": "2026-06-24T09:12:56.867Z"
+  }
+]

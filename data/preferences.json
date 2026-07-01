@@ -1,0 +1,156 @@
+[
+  {
+    "key": "language_preference",
+    "value": "Punjabi",
+    "category": "language",
+    "learnedAt": "2026-07-01T03:32:17.970Z",
+    "confidence": 0.9999999999999999
+  },
+  {
+    "key": "training_method",
+    "value": "chat_conversations",
+    "category": "behavior",
+    "learnedAt": "2026-06-04T09:28:53.709Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "suggestion_style",
+    "value": "proactive_similar_topics",
+    "category": "behavior",
+    "learnedAt": "2026-06-04T09:29:48.536Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "boss_identifier",
+    "value": "hey buddy",
+    "category": "behavior",
+    "learnedAt": "2026-06-04T09:31:27.172Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "context_linking",
+    "value": "high",
+    "category": "behavior",
+    "learnedAt": "2026-06-04T09:32:57.852Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "interaction_style",
+    "value": "friendly_and_appreciative",
+    "category": "behavior",
+    "learnedAt": "2026-06-22T17:48:22.905Z",
+    "confidence": 0.8999999999999999
+  },
+  {
+    "key": "clarification_need",
+    "value": "high_detail_data_processing",
+    "category": "behavior",
+    "learnedAt": "2026-06-13T04:08:30.254Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "language",
+    "value": "Hindi",
+    "category": "language",
+    "learnedAt": "2026-06-20T13:44:57.265Z",
+    "confidence": 0.7999999999999999
+  },
+  {
+    "key": "ui_theme",
+    "value": "sci-fi",
+    "category": "style",
+    "learnedAt": "2026-06-21T05:54:15.793Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "camera_close_process",
+    "value": "WindowsCamera.exe",
+    "category": "tool",
+    "learnedAt": "2026-06-21T16:06:50.564Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "celebrity_preference_correction",
+    "value": "does not like Vicky Kaushal",
+    "category": "behavior",
+    "learnedAt": "2026-06-21T16:07:48.043Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "celebrity_dislike",
+    "value": "Vicky Kaushal",
+    "category": "behavior",
+    "learnedAt": "2026-06-21T16:07:50.770Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "favorite_avenger",
+    "value": "Wanda Maximoff",
+    "category": "preference",
+    "learnedAt": "2026-06-21T16:08:06.074Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "address_home",
+    "value": "R.K. Nagar Gali Number 2, Morar, Gwalior",
+    "category": "behavior",
+    "learnedAt": "2026-06-21T16:12:16.051Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "vision_closed",
+    "value": "true",
+    "category": "behavior",
+    "learnedAt": "2026-06-21T17:31:37.157Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "issue_resolution_strategy",
+    "value": "When app close fails, list_processes then kill by exact Image Name.",
+    "category": "behavior",
+    "learnedAt": "2026-06-22T15:47:30.311Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "user_current_activity",
+    "value": "watching Instagram reels",
+    "category": "behavior",
+    "learnedAt": "2026-06-22T15:48:47.420Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "default_save_location",
+    "value": "Desktop",
+    "category": "other",
+    "learnedAt": "2026-06-22T16:26:39.462Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "emotion_expression_style",
+    "value": "ascii_art_one_by_one",
+    "category": "style",
+    "learnedAt": "2026-06-22T16:48:30.738Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "greeting_style",
+    "value": "direct_exact_repetition",
+    "category": "behavior",
+    "learnedAt": "2026-06-23T16:26:24.462Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "start_language",
+    "value": "Punjabi",
+    "category": "behavior",
+    "learnedAt": "2026-07-01T03:32:32.388Z",
+    "confidence": 0.7
+  },
+  {
+    "key": "auto_store_on_talk",
+    "value": "enabled",
+    "category": "workflow",
+    "learnedAt": "2026-07-01T03:34:03.788Z",
+    "confidence": 0.7
+  }
+]

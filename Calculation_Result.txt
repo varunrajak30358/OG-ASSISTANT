@@ -1,0 +1,11 @@
+Numbers Calculation:
+-------------------
+List of numbers: [19, 5, 16, 19, 14, 16, 7, 13, 11, 18, 9, 18, 13, 18]
+
+Step 1: Calculate the Sum
+19 + 5 + 16 + 19 + 14 + 16 + 7 + 13 + 11 + 18 + 9 + 18 + 13 + 18 = 196
+
+Step 2: Multiply by 6
+196 * 6 = 1176
+
+Final Result: 1176
