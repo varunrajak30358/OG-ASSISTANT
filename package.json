@@ -38,10 +38,12 @@
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
     "@tailwindcss/vite": "^4.3.0",
+    "@vitejs/plugin-react": "^6.0.1",
     "chalk": "^5.6.2",
     "cross-env": "^10.1.0",
     "decibri": "^3.4.0",
     "dotenv": "^17.4.2",
+    "esbuild": "0.28.1",
     "express": "^5.1.0",
     "fkill": "^10.0.3",
     "framer-motion": "^12.38.0",
@@ -57,6 +59,7 @@
     "tailwindcss": "^4.3.0",
     "three": "^0.184.0",
     "typescript": "^5.8.3",
+    "vite": "^8.0.12",
     "vite-express": "0.22.1"
   },
   "devDependencies": {
@@ -64,10 +67,7 @@
     "@types/node": "^25.8.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react": "^6.0.1",
-    "esbuild": "0.28.1",
     "nodemon": "^3.1.10",
-    "tsx": "^4.22.1",
-    "vite": "^8.0.12"
+    "tsx": "^4.22.1"
   }
 }
