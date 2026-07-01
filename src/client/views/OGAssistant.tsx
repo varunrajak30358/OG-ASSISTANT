@@ -463,7 +463,10 @@ const OGAssistant = () => {
       syncAvatar();
     });
 
-    const s = io();
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || "";
+    const s = io(backendUrl, {
+      transports: ["websocket", "polling"],
+    });
     setSocket(s);
 
     s.on("system_status", (msg: string) => {

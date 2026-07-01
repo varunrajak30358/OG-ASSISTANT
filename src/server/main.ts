@@ -148,7 +148,15 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const io = new Server(server, {
-  cors: { origin: "*" },
+  cors: {
+    origin: [
+      "http://localhost:6753",
+      "https://og-assistant.onrender.com",
+      process.env.FRONTEND_URL || "",
+    ].filter(Boolean),
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
 });
 
 // Per-socket clipboard state for file manager
