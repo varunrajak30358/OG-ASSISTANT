@@ -528,7 +528,7 @@ const healPortConflict = async (port: number) => {
 };
 
 const startServer = async () => {
-  const port = 6753;
+  const port = parseInt(process.env.PORT || "6753", 10);
   await healPortConflict(port);
 
   const printBanner = () => {
@@ -558,11 +558,13 @@ const startServer = async () => {
   if (process.env.NODE_ENV === "production") {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
-    app.use(express.static(__dirname));
-    app.get(/.*/, (req, res) => {
-      res.sendFile(path.join(__dirname, "index.html"));
+    // When running dist/server.js, the Vite-built UI is in the same dist/ folder
+    const staticDir = path.resolve(__dirname);
+    app.use(express.static(staticDir));
+    app.get(/.*/, (_req, res) => {
+      res.sendFile(path.join(staticDir, "index.html"));
     });
-    server.listen(port, () => {
+    server.listen(port, "0.0.0.0", () => {
       printBanner();
       startClickDaemon();
     });
