@@ -146,9 +146,9 @@ function findSoxPath(): string {
   return "sox";
 }
 
-const SOX_PATH = os.platform() === "win32" ? findSoxPath() : "sox";
-let micProcess: ChildProcess | null = null;
-let speakerProcess: ChildProcess | null = null;
+const SOX_PATH = ""; // unused — audio runs in browser
+let micProcess: null = null;
+let speakerProcess: null = null;
 let isRunning = false;
 let isSwitchingVoice = false;
 let reconnectAttempts = 0;
@@ -480,10 +480,7 @@ ${sessionCtx}`;
           if (!message) return;
 
           if (message.data) {
-            const buf = Buffer.from(message.data, "base64");
-            // Local mode: play via SoX speaker process
-            speakerProcess?.stdin?.write(buf);
-            // Cloud/browser mode: stream audio to browser client
+            // Stream audio to browser client via socket
             io.emit("audio_chunk", message.data); // raw base64 PCM at 24kHz
             // Signal client that audio is playing
             io.emit("agent_speaking", true);
@@ -611,11 +608,7 @@ ${sessionCtx}`;
               io.emit("system_status", "[OG] Max reconnect attempts reached. Please reconnect manually.");
             }
             reconnectAttempts = 0;
-            // Clean up processes on failure
-            try { micProcess?.kill("SIGTERM"); } catch {}
-            try { speakerProcess?.stdin?.end(); speakerProcess?.kill("SIGTERM"); } catch {}
-            micProcess = null;
-            speakerProcess = null;
+            // No local processes to clean up — audio runs in browser
           }
         },
         onclose: () => {
@@ -638,19 +631,10 @@ ${sessionCtx}`;
             } else {
               io.emit("system_status", "[OG] Connection lost. Please reconnect manually.");
               reconnectAttempts = 0;
-              // Clean up processes on hard disconnect
-              try { micProcess?.kill("SIGTERM"); } catch {}
-              try { speakerProcess?.stdin?.end(); speakerProcess?.kill("SIGTERM"); } catch {}
-              micProcess = null;
-              speakerProcess = null;
             }
           } else {
             io.emit("system_status", "OG : Disconnected");
             liveSession = null;
-            try { micProcess?.kill("SIGTERM"); } catch {}
-            try { speakerProcess?.stdin?.end(); speakerProcess?.kill("SIGTERM"); } catch {}
-            micProcess = null;
-            speakerProcess = null;
           }
         },
       },
@@ -662,54 +646,10 @@ ${sessionCtx}`;
       },
     });
 
-    if (!speakerProcess) {
-      speakerProcess = startSpeaker();
-    }
+    // Audio is handled entirely in the browser via Web Audio API.
+    // Browser sends mic PCM via "browser_audio" socket event → liveSession.sendRealtimeInput
+    // Server sends Gemini audio back via "audio_chunk" socket event → browser plays it
 
-    if (!micProcess) {
-      micProcess = startMic();
-
-      if (micProcess) {
-        micProcess.stdout?.on("data", (chunk: Buffer) => {
-          if (liveSession && isRunning) {
-            try {
-              liveSession.sendRealtimeInput({
-                audio: { data: chunk.toString("base64"), mimeType: `audio/pcm;rate=${SAMPLE_RATE}` },
-              });
-            } catch {}
-          } else if (!liveSession && isRunning) {
-            // Fallback Voice Loop: Local VAD and transcription!
-            const rms = getRMS(chunk);
-            if (rms > SILENCE_THRESHOLD) {
-              if (!isSpeakingUser) {
-                isSpeakingUser = true;
-                io.emit("system_status", "[FALLBACK] Listening to speech...");
-              }
-              silenceStart = Date.now();
-              audioBuffers.push(chunk);
-            } else {
-              if (isSpeakingUser) {
-                audioBuffers.push(chunk);
-                if (Date.now() - silenceStart > SILENCE_DURATION_MS) {
-                  // User finished speaking!
-                  isSpeakingUser = false;
-                  const fullBuffer = Buffer.concat(audioBuffers);
-                  audioBuffers = [];
-                  processFallbackVoiceTurn(fullBuffer, io);
-                }
-              }
-            }
-          }
-        });
-        micProcess.stderr?.on("data", (d: Buffer) => {
-          const m = d.toString().trim();
-          if (m && !m.includes("ALSA") && !m.includes("Warning") && !m.includes("Out:") && !m.includes("In:") && !m.includes("Clip:")) {
-            io.emit("system_status", `[MIC] ${m}`);
-          }
-        });
-        micProcess.on("error", () => io.emit("system_status", "[OG-ASSISTANT] Mic unavailable."));
-      }
-    }
   } catch (err: any) {
     const errMsg = err?.message || String(err);
     console.log(`[AGENT ERROR] startOGVoice failed: ${errMsg}`);
@@ -735,11 +675,8 @@ export function stopOGVoice(io: Server) {
   isRunning = false;
   isSwitchingVoice = false;
   try { liveSession?.close(); } catch {}
-  try { micProcess?.kill("SIGTERM"); } catch {}
-  try { speakerProcess?.stdin?.end(); speakerProcess?.kill("SIGTERM"); } catch {}
-  liveSession = null; micProcess = null; speakerProcess = null;
+  liveSession = null;
   io.emit("system_status", "OG : Disconnected");
-  // ── Auto-save short-term memory to long-term on disconnect ────────────────
   try {
     saveUserState({ lastSeen: new Date().toLocaleString() });
   } catch {}
