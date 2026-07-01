@@ -7,7 +7,7 @@ import path from "path";
 import net from "net";
 import { Server } from "socket.io";
 import ViteExpress from "vite-express";
-import { startOGVoice, stopOGVoice, sendChatMessage as handleChatMessage, handleVisionFrame } from "./agent/og-voice.js";
+import { startOGVoice, stopOGVoice, sendChatMessage as handleChatMessage, handleVisionFrame, handleBrowserAudio } from "./agent/og-voice.js";
 import { syncChatSession } from "./utils/memory.js";
 import { runSelfHealing } from "./utils/self-healing.js";
 import { startClickDaemon } from "./utils/click-daemon.js";
@@ -182,6 +182,13 @@ io.on("connection", (socket) => {
     try {
       const base64Data = data.frame.split(",")[1];
       handleVisionFrame(base64Data);
+    } catch {}
+  });
+
+  // ── Browser mic audio (for cloud/deployed mode) ───────────────────────────
+  socket.on("browser_audio", (data: { pcm: string }) => {
+    try {
+      handleBrowserAudio(data.pcm);
     } catch {}
   });
 

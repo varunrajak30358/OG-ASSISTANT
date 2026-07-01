@@ -329,6 +329,12 @@ const OGAssistant = () => {
   const camIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const uptimeRef      = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  // ── Browser audio (mic capture + playback for cloud/deployed mode) ─────────
+  const audioCtxRef        = useRef<AudioContext | null>(null);
+  const micStreamRef       = useRef<MediaStream | null>(null);
+  const micProcessorRef    = useRef<ScriptProcessorNode | null>(null);
+  const browserMicActive   = useRef(false);
+
   const greetingText = (() => {
     const h = new Date().getHours();
     if (h >= 5  && h < 12) return "Good Morning, Varun";
@@ -523,6 +529,35 @@ const OGAssistant = () => {
       if (!isSpeakingVal) { avatarEngineRef.current.onSpeakingEnd(); syncAvatar(); }
     });
 
+    // ── Browser audio playback (PCM chunks from Gemini via server) ───────────
+    s.on("audio_chunk", (base64Pcm: string) => {
+      try {
+        if (!audioCtxRef.current) {
+          audioCtxRef.current = new AudioContext({ sampleRate: 24000 });
+        }
+        const ctx = audioCtxRef.current;
+        if (ctx.state === "suspended") ctx.resume();
+
+        const raw = atob(base64Pcm);
+        const bytes = new Uint8Array(raw.length);
+        for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
+
+        // PCM is signed 16-bit little-endian — convert to float32
+        const samples = bytes.length / 2;
+        const audioBuffer = ctx.createBuffer(1, samples, 24000);
+        const channelData = audioBuffer.getChannelData(0);
+        const view = new DataView(bytes.buffer);
+        for (let i = 0; i < samples; i++) {
+          channelData[i] = view.getInt16(i * 2, true) / 32768.0;
+        }
+
+        const source = ctx.createBufferSource();
+        source.buffer = audioBuffer;
+        source.connect(ctx.destination);
+        source.start();
+      } catch {}
+    });
+
     s.on("turn_complete", () => {
       setIsExecuting(false);
       setIsCompleted(true);
@@ -618,6 +653,7 @@ const OGAssistant = () => {
       }
       socket?.emit("OG_Disconnected", "OG Disconnected");
       setIsConnected(false); setIsSpeaking(false); stopCamera();
+      stopBrowserMic();
       avatarEngineRef.current.onDisconnect(); syncAvatar();
     }
   };
@@ -626,6 +662,8 @@ const OGAssistant = () => {
     setSuitUp(false); socket?.emit("OG_Connected", "OG Connected");
     setIsConnected(true); setShowGreeting(true); setTimeout(() => setShowGreeting(false), 4000);
     avatarEngineRef.current.onConnect(); syncAvatar();
+    // Start browser mic for cloud deployment
+    startBrowserMic();
     setSessions(prev => {
       const loaded = prev;
       if (loaded.length > 0 && transcripts.filter(m => m.role !== "SYSTEM").length === 0) {
@@ -639,6 +677,51 @@ const OGAssistant = () => {
       return prev;
     });
   }, [syncAvatar, transcripts]);
+
+  // ── Browser mic capture → stream PCM to server ────────────────────────────
+  const startBrowserMic = async () => {
+    if (browserMicActive.current) return;
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: { sampleRate: 16000, channelCount: 1, echoCancellation: true, noiseSuppression: true }, video: false });
+      micStreamRef.current = stream;
+
+      const ctx = new AudioContext({ sampleRate: 16000 });
+      audioCtxRef.current = ctx;
+      const source = ctx.createMediaStreamSource(stream);
+
+      // ScriptProcessor captures raw PCM (deprecated but widely supported)
+      const processor = ctx.createScriptProcessor(4096, 1, 1);
+      processor.onaudioprocess = (e) => {
+        if (!socket || !browserMicActive.current) return;
+        const floatData = e.inputBuffer.getChannelData(0);
+        // Convert float32 → int16 PCM
+        const pcm = new Int16Array(floatData.length);
+        for (let i = 0; i < floatData.length; i++) {
+          pcm[i] = Math.max(-32768, Math.min(32767, floatData[i] * 32768));
+        }
+        // Base64 encode and send
+        const bytes = new Uint8Array(pcm.buffer);
+        let binary = "";
+        for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+        socket.emit("browser_audio", { pcm: btoa(binary) });
+      };
+
+      source.connect(processor);
+      processor.connect(ctx.destination);
+      micProcessorRef.current = processor;
+      browserMicActive.current = true;
+    } catch (err: any) {
+      console.warn("[BrowserMic] Could not start:", err.message);
+    }
+  };
+
+  const stopBrowserMic = () => {
+    browserMicActive.current = false;
+    try { micProcessorRef.current?.disconnect(); } catch {}
+    try { micStreamRef.current?.getTracks().forEach(t => t.stop()); } catch {}
+    micStreamRef.current = null;
+    micProcessorRef.current = null;
+  };
 
   const startCamera = async (mode: 'camera' | 'screen' = 'camera') => {
     setCameraError(null);

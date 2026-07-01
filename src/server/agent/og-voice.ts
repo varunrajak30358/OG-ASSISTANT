@@ -481,7 +481,10 @@ ${sessionCtx}`;
 
           if (message.data) {
             const buf = Buffer.from(message.data, "base64");
+            // Local mode: play via SoX speaker process
             speakerProcess?.stdin?.write(buf);
+            // Cloud/browser mode: stream audio to browser client
+            io.emit("audio_chunk", message.data); // raw base64 PCM at 24kHz
             // Signal client that audio is playing
             io.emit("agent_speaking", true);
           }
@@ -740,6 +743,18 @@ export function stopOGVoice(io: Server) {
   try {
     saveUserState({ lastSeen: new Date().toLocaleString() });
   } catch {}
+}
+
+// ── Browser mic audio relay ──────────────────────────────────────────────────
+// Called from main.ts socket handler when browser sends mic PCM chunks
+export function handleBrowserAudio(base64Pcm: string) {
+  if (liveSession && isRunning) {
+    try {
+      liveSession.sendRealtimeInput({
+        audio: { data: base64Pcm, mimeType: `audio/pcm;rate=${SAMPLE_RATE}` },
+      });
+    } catch {}
+  }
 }
 
 // Helper to call NVIDIA NIM fallback model (e.g. llama-3.1-8b-instruct or riva-translate)
